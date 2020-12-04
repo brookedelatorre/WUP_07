@@ -24,7 +24,12 @@ state of a patient must be died or alive - we adjust that as well
   
 # Question 1 - Is dying independent of sex
 
+##Introduction
+We will be looking at our data to determine if covid is more deadly to one sex over the other. 
 
+$H_0$:Covid is not deadlier to one sex over the other
+
+$H_A$:Covid is deadlier to one sex over the other
 
 
 Table of patients:
@@ -36,12 +41,15 @@ with(kRdata, table(Sex, result))
 
 ```
 
+According to this result it appears that it is more deadly to males. 
+
 ## We create two bar charts - one based on frequency and the other on percent
 
 ```{r}
 barchartGC(~result + Sex,data=kRdata, main ="Frequency Bar Chart")
 ```
 
+According to the bargraph this is a visual representation that shows that covid is more deadly to males.
   
 ### this bar chart is displaying in total frequency terms our data.  Clearly there are a lot less dead people than alive people as is reflected by the sizes of the bars in the display.  
 
@@ -77,4 +85,4 @@ The ratio is (44/1411)/ (25/1831).
 The odds of dying is 2.3 to 1.   
    
 ## Conclusions
-
+The P-value is less than 0.05 so we reject the null hypothesis covid is not deadlier to one sex over the other. Based on the bargraph and the numerical data set males showed more death rates than females.As discussed in the fisher test for every 2.3 males that die from covid 1 woman will die. 
